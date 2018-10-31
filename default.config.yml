@@ -6,7 +6,7 @@ configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/djogss/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
@@ -15,38 +15,38 @@ dotfiles_files:
   - .inputrc
   - .osx
   - .vimrc
+  - .tmux.conf
+  - .bashrc
+  - .bash_aliases
+  - .gitconfig
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
   - git
-  - go
   - gpg
-  - hub
-  - httpie
   - iperf
-  - libevent
-  - sqlite
   - mcrypt
   - nmap
   - node
   - nvm
-  - php
   - ssh-copy-id
-  - cowsay
   - readline
   - openssl
   - pv
   - wget
   - wrk
+  - tmux
+  - z
+  # - intellij-idea # community edition
+  # OSX software
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - caskroom/versions
+  - caskroom/cask
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -55,16 +55,15 @@ homebrew_cask_apps:
   - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - limechat
   - macvim
-  - sequel-pro
-  - skitch
   - slack
-  - sublime-text
   - transmit
-  - vagrant
+  - visual-studio-code
+  - iterm2
+  - java8
+  - openssl
+  - spectacle
+
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -93,5 +92,9 @@ pip_packages: []
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
 
-# Glob pattern to ansible task files to run after all other tasks are finished.
+# Glob pattern to unusable task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+visual_studio_code_extensions:
+  - extensionName: autoimport
+    publisher: steoates

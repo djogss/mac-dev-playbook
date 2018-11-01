@@ -92,8 +92,8 @@ mas_installed_apps:
   - { name: Keynote, id: 409183694 }
   - { name: "Tomato One", id: 907364780 }
   - { id: 784801555, name: "Microsoft OneNote" }
-mas_email: ""
-mas_password: ""
+mas_email: "{{ mas_email }}"
+mas_password: "{{ mas_password }}"
 
 osx_script: "~/.osx --no-restart"
 
@@ -125,6 +125,8 @@ pip_packages:
   - name: pyyaml
     state: present
   - name: netaddr
+    state: present
+  - name: docker
     state: present
 
 # LG dev setup

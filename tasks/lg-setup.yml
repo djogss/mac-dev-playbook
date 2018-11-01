@@ -33,6 +33,31 @@
     - lg
 
 
+- name: Log into private registry and force re-authorization
+  docker_login:
+    registry: "{{ repo }}"
+    username: "{{ nexusUser }}"
+    password: "{{ nexusUserPass }}"
+    reauthorize: yes
+  tags:
+    - lg
+    - foo
+
+- name: pull an lg-postgres
+  docker_image:
+    name: nexus.live.logicalglue.net/lg-postgres:1
+  tags:
+    - lg
+    - foo
+
+- name: Create a lg-postgres container
+  docker_container:
+    name: lg-postgres-db
+    image: "{{ repo }}/lg-postgres:1"
+    ports: "15432:5432"
+  tags:
+    - lg
+    - foo
 
 
 # manual installation is required

@@ -84,6 +84,7 @@ homebrew_cask_apps:
   - virtualbox-extension-pack
   - vlc
   - xmind
+  - spotify
 
 
 # See `geerlingguy.mas` role documentation for usage instructions.

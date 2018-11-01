@@ -1,0 +1,6 @@
+---
+awsAccessKey: <your private details>
+awsAccessKeyId: <your private details>
+
+nexusUser: dcos
+nexusUserPass: <your private details>

@@ -1,0 +1,43 @@
+---
+- name: Ensure configured LG git repos are present.
+  git:
+    repo: "ssh://git@{{ item.repo }}"
+    dest: "$HOME/workspaces/java/lg/{{ item.name }}"
+  with_items: "{{ lg_repos }}"
+  tags:
+    - lg-git-repos
+    - lg
+
+- name: Ensures $HOME/.aws dir exists
+  file: path=$HOME/.aws state=directory
+  tags:
+    - lg
+
+- name: Set up aws credentials
+  template:
+    src: ../templates/lg/aws.credentials.j2
+    dest: $HOME/.aws/credentials
+  tags:
+    - lg
+
+- name: Ensures $HOME/.gradle dir exists
+  file: path=$HOME/.gradle state=directory
+  tags:
+    - lg
+
+- name: Set up nexus credentials in gradle file
+  template:
+    src: ../templates/lg/gradle.properties.j2
+    dest: $HOME/.gradle/gradle.properties
+  tags:
+    - lg
+
+
+
+
+# manual installation is required
+#- name: Install arc certificates
+#  command: arc install-certificate arg1
+#  args:
+#    chdir: $HOME/workspaces/java/lg/server
+#  tags: lg

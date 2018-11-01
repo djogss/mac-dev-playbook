@@ -5,6 +5,8 @@ configure_dotfiles: yes
 configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
+git_repos: yes
+lg_setup: yes
 
 dotfiles_repo: https://github.com/djogss/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
@@ -39,14 +41,27 @@ homebrew_installed_packages:
   - wrk
   - tmux
   - z
+  - jq
+  - htop-osx
+  - node
+  - npm
+  - peco # filtering https://github.com/peco/peco
+  - python3
+  - tree
+  - zsh
+  - zsh-completions
   # - intellij-idea # community edition
-  # OSX software
+  # LG specific
+  - redis
+  - gradle
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
   - caskroom/versions
   - caskroom/cask
+  - dteoh/sqa
+  - sanemat/font
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -62,11 +77,20 @@ homebrew_cask_apps:
   - iterm2
   - java8
   - openssl
+  # OSX software
   - spectacle
+  - grammarly
+  - virtualbox
+  - virtualbox-extension-pack
+  - vlc
+  - xmind
 
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { name: Keynote, id: 409183694 }
+  - { name: "Tomato One", id: 907364780 }
+  - { id: 784801555, name: "Microsoft OneNote" }
 mas_email: ""
 mas_password: ""
 
@@ -83,14 +107,29 @@ gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
+npm_packages:
+  - { name: "@angular/cli" }
+  - { name: gulp }
+  - { name: karma }
+  - { name: typescript }
+  - { name: typings }
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
-pip_packages: []
-  # - name: mkdocs
-  #   state: present # present/absent/latest, default: present
-  #   version: "0.16.3" # default: N/A
+pip_packages:
+  - name: mkdocs
+    state: present # present/absent/latest, default: present
+  - name: boto
+    state: present
+  - name: pyyaml
+    state: present
+  - name: netaddr
+    state: present
+
+# LG dev setup
+lg_repos:
+  - { name: server, repo: git.logicalglue.net/diffusion/S/server.git }
+  - { name: infrastructure, repo: git.logicalglue.net/diffusion/INFRA/infrastructure.git }
 
 # Glob pattern to unusable task files to run after all other tasks are finished.
 post_provision_tasks: []

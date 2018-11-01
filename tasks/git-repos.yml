@@ -1,0 +1,29 @@
+---
+- name: Clone libphutil git repo.
+  git:
+    repo: ssh://git@github.com/phacility/libphutil.git
+    dest: $HOME/workspaces/tools/gitlibs/libphutil
+  tags: git-repos
+
+- name: Clone arcanist git repo.
+  git:
+    repo: ssh://git@github.com/phacility/arcanist.git
+    dest: $HOME/workspaces/tools/gitlibs/arcanist
+  tags: git-repos
+
+
+- name: update .profile
+  lineinfile:
+    create: true
+    dest: ~/.profile
+    state: present
+    line: 'export PATH=$PATH:$HOME/workspaces/tools/gitlibs/arcanist/bin'
+  tags: git-repos
+
+- name: update .profile
+  lineinfile:
+    create: true
+    dest: ~/.bash_profile
+    state: present
+    line: 'export PATH=$PATH:$HOME/workspaces/tools/gitlibs/arcanist/bin'
+  tags: git-repos

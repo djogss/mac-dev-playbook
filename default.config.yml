@@ -10,7 +10,7 @@ lg_setup: yes
 
 dotfiles_repo: https://github.com/djogss/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/workspaces/tools/gitlibs/dotfiles
 dotfiles_files:
   - .bash_profile
   - .gitignore

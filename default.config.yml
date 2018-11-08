@@ -50,7 +50,6 @@ homebrew_installed_packages:
   - tree
   - zsh
   - zsh-completions
-  # - intellij-idea # community edition
   # LG specific
   - redis
   - gradle
@@ -86,13 +85,14 @@ homebrew_cask_apps:
   - vlc
   - xmind
   - spotify
+  - intellij-idea # community edition
 
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps:
-  - { name: Keynote, id: 409183694 }
-  - { name: "Tomato One", id: 907364780 }
-  - { id: 784801555, name: "Microsoft OneNote" }
+mas_installed_apps: []
+  #  - { name: Keynote, id: 409183694 }
+  # - { name: "Tomato One", id: 907364780 }
+  #- { id: 784801555, name: "Microsoft OneNote" }
 mas_email: "{{ mas_email }}"
 mas_password: "{{ mas_password }}"
 
@@ -133,11 +133,8 @@ pip_packages:
 # LG dev setup
 lg_repos:
   - { name: server, repo: "{{ lg_git_repo_domain }}/diffusion/S/server.git" }
-  - { name: infrastructure, repo: "{{ lg_git_repo_domain }}/diffusion/INFRA/infrastructure.git" }
   - { name: micro-services, repo: "{{ lg_git_repo_domain }}/diffusion/APMS/micro-services.git" }
   - { name: microservices-libraries, repo: "{{ lg_git_repo_domain }}/diffusion/MSL/microservices-libraries.git" }
-  - { name: aabf, repo: "{{ lg_git_repo_domain }}/diffusion/APAABF/aabf.git" }
-  - { name: code-exercise, repo: "{{ lg_git_repo_domain }}/diffusion/EXERCISE/code-exercise.git" }
 
 # Glob pattern to unusable task files to run after all other tasks are finished.
 post_provision_tasks: []

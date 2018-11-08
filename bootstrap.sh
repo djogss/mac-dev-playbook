@@ -12,8 +12,8 @@ echo "Dev machine bootstrap start"
 command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 
-#sudo easy_install pip
-#sudo pip install ansible
+sudo easy_install pip
+sudo pip install ansible
 
 brew install git
 

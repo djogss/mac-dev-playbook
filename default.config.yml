@@ -43,7 +43,7 @@ homebrew_installed_packages:
   - z
   - jq
   - htop-osx
-  - node
+  - node@8
   - npm
   - peco # filtering https://github.com/peco/peco
   - python3
@@ -53,6 +53,7 @@ homebrew_installed_packages:
   # LG specific
   - redis
   - gradle
+  - autossh
 
 homebrew_taps:
   - homebrew/core
@@ -79,6 +80,7 @@ homebrew_cask_apps:
   - the-unarchiver
   # OSX software
   - spectacle
+  - teamviewer
   - grammarly
   - virtualbox
   - virtualbox-extension-pack

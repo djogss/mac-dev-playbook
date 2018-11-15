@@ -6,7 +6,6 @@
   with_items: "{{ lg_repos }}"
   tags:
     - lg-git-repos
-    - lg
 
 - name: Ensures $HOME/.aws dir exists
   file: path=$HOME/.aws state=directory
@@ -58,6 +57,15 @@
   tags:
     - lg
     - foo
+
+
+- name: update gpg-agent.conf
+  lineinfile:
+    create: true
+    dest: ~/.gnupg/gpg-agent.conf
+    state: present
+    line: 'pinentry-program /usr/local/bin/pinentry-mac'
+  tags: foo
 
 
 # manual installation is required
